@@ -10,5 +10,5 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Print Hello World
-      run: echo "Hello World"
+    - name: Print Hello World with Environment and Secret
+      run: echo "env=${{ env.MY_ENV_VAR }} sec=${{ secrets.SEC_VAR }}"
