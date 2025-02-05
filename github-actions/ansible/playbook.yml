@@ -1,0 +1,39 @@
+---
+- name: CI 서버 설정
+  hosts: all
+  become: no
+  roles:
+    - github-runner
+
+  tasks:
+    - name: Node.js 설치
+      shell: |
+        curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+        apt-get install -y nodejs
+      when: ansible_os_family == "Debian" or ansible_os_family == "RedHat"
+
+    - name: Node.js 설치 (Windows)
+      win_chocolatey:
+        name: nodejs
+        state: present
+      when: ansible_os_family == "Windows"
+
+    - name: Node.js 설치 (macOS)
+      shell: |
+        brew install node
+      when: ansible_os_family == "Darwin"
+
+    - name: pnpm 설치
+      npm:
+        name: pnpm
+        global: yes
+        version: 8.15.6
+
+    - name: Playwright 설치
+      npm:
+        name: playwright
+        global: yes
+
+    - name: Playwright 브라우저 설치
+      shell: |
+        npx playwright install

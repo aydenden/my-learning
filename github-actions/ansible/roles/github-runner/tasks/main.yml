@@ -1,0 +1,108 @@
+---
+- name: GitHub Runner 설치 디렉토리 생성
+  file:
+    path: /home/github/actions-runner
+    state: directory
+  when: ansible_os_family == "Debian" or ansible_os_family == "RedHat"
+
+- name: GitHub Runner 다운로드 (Linux)
+  get_url:
+    url: "https://github.com/actions/runner/releases/download/v{{ runner_version }}/actions-runner-linux-x64-{{ runner_version }}.tar.gz"
+    dest: /home/github/actions-runner/actions-runner-linux-x64-{{ runner_version }}.tar.gz
+  when: ansible_os_family == "Debian" or ansible_os_family == "RedHat"
+
+- name: GitHub Runner 압축 해제 (Linux)
+  unarchive:
+    src: /home/github/actions-runner/actions-runner-linux-x64-{{ runner_version }}.tar.gz
+    dest: /home/github/actions-runner/
+    remote_src: yes
+  when: ansible_os_family == "Debian" or ansible_os_family == "RedHat"
+
+- name: GitHub Runner 설정 파일 존재 확인 (Linux)
+  stat:
+    path: /home/github/actions-runner/config.sh
+  register: config_sh
+
+- name: GitHub Runner 설정 파일에 실행 권한 부여 (Linux)
+  file:
+    path: /home/github/actions-runner/config.sh
+    mode: '0755'
+  when: config_sh.stat.exists
+
+- name: GitHub Runner 설정 (Linux)
+  become: no
+  expect:
+    command: /home/github/actions-runner/config.sh --url {{ github_repo_url }} --token {{ github_token }}
+    responses:
+      'Enter the name of the runner group to add this runner to:': '\n'
+      'Enter the name of runner:': '\n'
+      'This runner will have the following labels:': '\n'
+      '√ Settings Saved.': '\n'
+  when: ansible_os_family == "Debian" or ansible_os_family == "RedHat"
+
+- name: GitHub Runner 실행 (Linux)
+  shell: |
+    cd /home/github/actions-runner
+    ./run.sh
+  when: ansible_os_family == "Debian" or ansible_os_family == "RedHat"
+
+- name: GitHub Runner 설치 디렉토리 생성 (Windows)
+  win_file:
+    path: C:\actions-runner
+    state: directory
+  when: ansible_os_family == "Windows"
+
+- name: GitHub Runner 다운로드 (Windows)
+  win_get_url:
+    url: "https://github.com/actions/runner/releases/download/v{{ runner_version }}/actions-runner-win-x64-{{ runner_version }}.zip"
+    dest: C:\actions-runner\actions-runner-win-x64-{{ runner_version }}.zip
+  when: ansible_os_family == "Windows"
+
+- name: GitHub Runner 압축 해제 (Windows)
+  win_unzip:
+    src: C:\actions-runner\actions-runner-win-x64-{{ runner_version }}.zip
+    dest: C:\actions-runner
+  when: ansible_os_family == "Windows"
+
+- name: GitHub Runner 설정 (Windows)
+  win_shell: |
+    cd C:\actions-runner
+    .\config.cmd --url {{ github_repo_url }} --token {{ github_token }}
+  when: ansible_os_family == "Windows"
+
+- name: GitHub Runner 실행 (Windows)
+  win_shell: |
+    cd C:\actions-runner
+    .\run.cmd
+  when: ansible_os_family == "Windows"
+
+- name: GitHub Runner 설치 디렉토리 생성 (macOS)
+  file:
+    path: /Users/github/actions-runner
+    state: directory
+  when: ansible_os_family == "Darwin"
+
+- name: GitHub Runner 다운로드 (macOS)
+  get_url:
+    url: "https://github.com/actions/runner/releases/download/v{{ runner_version }}/actions-runner-osx-x64-{{ runner_version }}.tar.gz"
+    dest: /Users/github/actions-runner/actions-runner-osx-x64-{{ runner_version }}.tar.gz
+  when: ansible_os_family == "Darwin"
+
+- name: GitHub Runner 압축 해제 (macOS)
+  unarchive:
+    src: /Users/github/actions-runner/actions-runner-osx-x64-{{ runner_version }}.tar.gz
+    dest: /Users/github/actions-runner/
+    remote_src: yes
+  when: ansible_os_family == "Darwin"
+
+- name: GitHub Runner 설정 (macOS)
+  shell: |
+    cd /Users/github/actions-runner
+    ./config.sh --url {{ github_repo_url }} --token {{ github_token }}
+  when: ansible_os_family == "Darwin"
+
+- name: GitHub Runner 실행 (macOS)
+  shell: |
+    cd /Users/github/actions-runner
+    ./run.sh
+  when: ansible_os_family == "Darwin"
