@@ -1,6 +1,5 @@
 name: Hello World Workflow
 
-on: [push]
 
 jobs:
   hello_world_job2:
