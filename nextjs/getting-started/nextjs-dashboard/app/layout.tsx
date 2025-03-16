@@ -1,4 +1,5 @@
 import '@/app/ui/global.css'
+// import {pretendard} from '@/app/ui/fonts'
 import {inter} from '@/app/ui/fonts'
 
 export default function RootLayout({
