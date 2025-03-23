@@ -31,5 +31,7 @@
     "app/lib/placeholder-data.ts",
     "scripts/seed.js"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "nextjs-dashboard/node_modules"
+  ]
 }
