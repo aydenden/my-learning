@@ -1,0 +1,28 @@
+{
+  "name": "openapi-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "node ./api-generator.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@kubb/cli": "^3.7.2",
+    "@kubb/core": "^3.7.2",
+    "@kubb/plugin-client": "^3.7.2",
+    "@kubb/plugin-faker": "^3.7.2",
+    "@kubb/plugin-msw": "^3.7.2",
+    "@kubb/plugin-react-query": "^3.7.2",
+    "dotenv": "^16.4.7",
+    "openapi-typescript": "^7.6.1",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "openapi-fetch": "^0.13.5",
+    "openapi-react-query": "^0.3.1"
+  }
+}
