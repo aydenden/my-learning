@@ -14,6 +14,24 @@ export const Route = createRootRoute({
         <Link to="/thinking-in-react" className="[&.active]:font-bold">
           리액트로 사고하기
         </Link>
+        <Link to="/describing-the-ui" className="[&.active]:font-bold">
+          Describing the UI
+        </Link>
+        <Link to="/writing-markup-with-jsx" className="[&.active]:font-bold">
+          writing-markup-with-jsx
+        </Link>
+        <Link
+          to="/javascript-in-jsx-with-curly-braces"
+          className="[&.active]:font-bold"
+        >
+          javascript-in-jsx-with-curly-braces
+        </Link>
+        <Link
+          to="//passing-props-to-a-component"
+          className="[&.active]:font-bold"
+        >
+          javascript-in-jsx-with-curly-braces
+        </Link>
       </div>
       <hr />
       <Outlet />
