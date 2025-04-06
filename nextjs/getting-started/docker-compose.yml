@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: nextjs-postgres
+    environment:
+      POSTGRES_USER: nextuser
+      POSTGRES_PASSWORD: nextpassword
+      POSTGRES_DB: nextdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      # 초기화 SQL 스크립트 마운트
+      - ./postgres/init-scripts:/docker-entrypoint-initdb.d
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nextuser -d nextdb"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # 데이터 시드를 위한 서비스
+  seed:
+    build:
+      context: .
+      dockerfile: Dockerfile.seed
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      POSTGRES_USER: nextuser
+      POSTGRES_PASSWORD: nextpassword
+      POSTGRES_DATABASE: nextdb
+      POSTGRES_HOST: postgres
+
+volumes:
+  postgres-data:
