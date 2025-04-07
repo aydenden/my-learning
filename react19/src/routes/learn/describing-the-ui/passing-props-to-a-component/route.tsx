@@ -1,6 +1,8 @@
 import { createFileRoute, Link, Outlet } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/writing-markup-with-jsx")({
+export const Route = createFileRoute(
+  "/learn/describing-the-ui/passing-props-to-a-component",
+)({
   component: RouteComponent,
 });
 
@@ -8,16 +10,16 @@ function RouteComponent() {
   return (
     <div>
       <Link
-        to="//writing-markup-with-jsx/syntax-error"
+        to="/learn/describing-the-ui/passing-props-to-a-component/avatar"
         className="[&.active]:font-bold"
       >
-        Syntax Error
+        avatar
       </Link>
       <Link
-        to="///writing-markup-with-jsx/rule"
+        to="/learn/describing-the-ui/passing-props-to-a-component/clock"
         className="[&.active]:font-bold"
       >
-        기본 규칙
+        clock
       </Link>
 
       <br />

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PropsWithChildren } from "react";
 
-export const Route = createFileRoute("/javascript-in-jsx-with-curly-braces")({
+export const Route = createFileRoute("/learn/describing-the-ui/javascript-in-jsx-with-curly-braces")({
   component: RouteComponent,
 });
 

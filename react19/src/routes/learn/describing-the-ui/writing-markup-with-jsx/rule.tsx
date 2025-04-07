@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/writing-markup-with-jsx/rule")({
+export const Route = createFileRoute("/learn/describing-the-ui/writing-markup-with-jsx/rule")({
   component: RouteComponent,
 });
 

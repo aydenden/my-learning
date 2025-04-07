@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { PropsWithChildren } from "react";
 
-export const Route = createFileRoute("/passing-props-to-a-component/avatar")({
+export const Route = createFileRoute(
+  "/learn/describing-the-ui/passing-props-to-a-component/avatar",
+)({
   component: RouteComponent,
 });
 
@@ -18,10 +21,10 @@ function RouteComponent() {
   );
 }
 
-function Card({ children }) {
+function Card({ children }: PropsWithChildren) {
   return <div className="card">{children}</div>;
 }
-function Avatar({ person, size = 50 }) {
+function Avatar({ person, size = 50 }: { person: Person; size?: number }) {
   return (
     <img
       className="avatar"
@@ -32,6 +35,11 @@ function Avatar({ person, size = 50 }) {
     />
   );
 }
-function getImageUrl(person, size = "s") {
+function getImageUrl(person: Person, size = "s") {
   return "https://i.imgur.com/" + person.imageId + size + ".jpg";
+}
+
+interface Person {
+  name: string;
+  imageId: string;
 }

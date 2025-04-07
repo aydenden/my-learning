@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 
-export const Route = createFileRoute("/passing-props-to-a-component/clock")({
+export const Route = createFileRoute(
+  "/learn/describing-the-ui/passing-props-to-a-component/clock",
+)({
   component: RouteComponent,
 });
 
@@ -22,7 +24,7 @@ function RouteComponent() {
     </div>
   );
 }
-function Clock({ color, time }) {
+function Clock({ color, time }: { color: string; time: string }) {
   return <h1 style={{ color: color }}>{time}</h1>;
 }
 

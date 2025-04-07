@@ -20,6 +20,6 @@ const First = () => {
 
 export default First;
 
-export const Route = createFileRoute("/describing-the-ui/first")({
+export const Route = createFileRoute("/learn/describing-the-ui/first")({
   component: First,
 });
