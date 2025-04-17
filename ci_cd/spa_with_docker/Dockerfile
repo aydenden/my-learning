@@ -1,8 +1,18 @@
-FROM nginx:latest
-LABEL authors="aydenden"
+FROM node:23 AS build
 
-# nginx html 폴더에 dist 빌드 결과물을 복사
-COPY ./dist/ /usr/share/nginx/html
+RUN npm i -g pnpm
+# 작업 디렉토리 설정
+WORKDIR /app
+COPY . /app
+# 의존성 설치
+RUN pnpm install
+# 빌드
+RUN pnpm build
+
+FROM nginx:1.27.5-alpine
+
+# nginx html 폴더에 build from 결과물을 복사
+COPY --from=build /app/dist/ /usr/share/nginx/html
 
 # nginx 설정 파일을 복사
 COPY ./nginx.conf /etc/nginx/nginx.conf
@@ -12,6 +22,3 @@ EXPOSE 80
 
 # nginx 실행
 CMD ["nginx", "-g", "daemon off;"]
-
-
-
