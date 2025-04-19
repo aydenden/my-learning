@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  # 프록시 서버 - 항상 실행 유지
+  route:
+    build:
+      context: .
+      dockerfile: conf/route.Dockerfile
+    container_name: route_proxy
+    ports:
+      - "80:80"
+    networks:
+      - deploy_network
+    restart: unless-stopped
+    volumes:
+      - ./conf/route.active.conf:/etc/nginx/conf.d/active.conf:ro
+    depends_on:
+      - app_blue  # 초기 배포는 blue 환경
+
+  # Blue 환경 (기본 배포)
+  app_blue:
+    build:
+      context: .
+      dockerfile: conf/app.Dockerfile
+    container_name: app_blue
+    expose:
+      - "80"
+    networks:
+      - deploy_network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:80/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    environment:
+      - NODE_ENV=production
+      - APP_VERSION=blue
+
+  # Green 환경 (새 버전 배포용)
+  app_green:
+    build:
+      context: .
+      dockerfile: conf/app.Dockerfile
+    container_name: app_green
+    expose:
+      - "80"
+    networks:
+      - deploy_network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:80/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    environment:
+      - NODE_ENV=production
+      - APP_VERSION=green
+    # 초기에는 시작하지 않음 (배포 시에만 활성화)
+    profiles:
+      - green_deployment
+
+networks:
+  deploy_network:
+    driver: bridge
