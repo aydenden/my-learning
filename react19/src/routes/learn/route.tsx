@@ -7,8 +7,11 @@ export const Route = createFileRoute("/learn")({
 function RouteComponent() {
   return (
     <div>
-      <Link to="/learn/describing-the-ui" className="[&.active]:font-bold">
+      <Link to="/learn/describing-the-ui" className="item">
         describing-the-ui
+      </Link>
+      <Link to="/learn/adding-interactivity" className="[&.active]:font-bold">
+        adding-interactivity
       </Link>
       <div
         style={{
