@@ -48,7 +48,7 @@ const initialArtists = [
   { id: 2, name: "Louise Nevelson" },
 ];
 
-export default function List2() {
+function List2() {
   const [artists, setArtists] = useState(initialArtists);
 
   return (
@@ -78,7 +78,7 @@ const initialShapes = [
   { id: 2, type: "circle", x: 250, y: 100 },
 ];
 
-export default function ShapeEditor() {
+function ShapeEditor() {
   const [shapes, setShapes] = useState(initialShapes);
 
   function handleClick() {
@@ -120,7 +120,7 @@ export default function ShapeEditor() {
 
 const initialCounters = [0, 0, 0];
 
-export default function CounterList() {
+function CounterList() {
   const [counters, setCounters] = useState(initialCounters);
 
   function handleIncrementClick(index) {
@@ -161,7 +161,7 @@ const initialArtists2 = [
   { id: 2, name: "Louise Nevelson" },
 ];
 
-function List2() {
+function List3() {
   const [name, setName] = useState("");
   const [artists, setArtists] = useState(initialArtists2);
 
@@ -199,7 +199,7 @@ const initialList = [
   { id: 2, title: "Terracotta Army" },
 ];
 
-function List3() {
+function List4() {
   const [list, setList] = useState(initialList);
 
   function handleClick() {
