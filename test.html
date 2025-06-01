@@ -1,0 +1,238 @@
+<html><head>
+    <meta charset="utf-8"/>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Newsreader%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <title>News Today</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+<body class="bg-gray-50">
+<div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: Newsreader, "Noto Sans", sans-serif;'>
+    <div class="layout-container flex h-full grow flex-col">
+        <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md">
+            <div class="container mx-auto flex items-center justify-between whitespace-nowrap border-b border-solid border-b-gray-200 px-6 py-4">
+                <div class="flex items-center gap-10">
+                    <div class="flex items-center gap-3 text-gray-900">
+                        <svg class="h-8 w-8 text-primary-600" fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"></path>
+                        </svg>
+                        <h1 class="text-gray-900 text-2xl font-bold leading-tight tracking-tighter">NewsToday</h1>
+                    </div>
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a class="text-gray-700 hover:text-primary-600 text-base font-medium leading-normal transition-colors" href="#">Top Stories</a>
+                        <a class="text-gray-700 hover:text-primary-600 text-base font-medium leading-normal transition-colors" href="#">World</a>
+                        <a class="text-gray-700 hover:text-primary-600 text-base font-medium leading-normal transition-colors" href="#">Business</a>
+                        <a class="text-gray-700 hover:text-primary-600 text-base font-medium leading-normal transition-colors" href="#">Technology</a>
+                        <a class="text-gray-700 hover:text-primary-600 text-base font-medium leading-normal transition-colors" href="#">Sports</a>
+                        <a class="text-gray-700 hover:text-primary-600 text-base font-medium leading-normal transition-colors" href="#">Arts</a>
+                    </nav>
+                </div>
+                <div class="flex items-center gap-4">
+                    <label class="relative flex items-center h-10 min-w-40 max-w-xs">
+                        <div class="absolute left-3 text-gray-500" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
+                            <i class="material-icons text-xl">search</i>
+                        </div>
+                        <input class="form-input w-full rounded-full border-gray-300 bg-gray-100 hover:bg-gray-200 focus:bg-white focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 h-full pl-10 pr-4 text-base font-normal leading-normal text-gray-900 placeholder-gray-500 transition-colors" placeholder="Search news..." value=""/>
+                    </label>
+                    <button aria-label="Notifications" class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-100 hover:bg-gray-200 text-gray-700 hover:text-primary-600 transition-colors">
+                        <i class="material-icons text-xl">notifications</i>
+                    </button>
+                    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-gray-200 hover:border-primary-500 transition-all" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBrRfaTmZn5-moJoXfZyu-zBzedp1NE7efF6Tcgr7Wb_uPtQPdXLPaMCGJwSyE8Ir8YwasQelmO6cf92NZeiCD1c_TJO8FzHTtLE8p21XGZJHg-Df0uJ62NAnZtgnMdOPqi9lan2fwcymxO55CbKd6TvZaw_8OJ0UBnkWEidAiM6GtL2IO-1aHsDNXvXuiPjBSJLYo8YBv0s3Vx3rBDYytXhjNeNANUheTMOD2Gy_hicwelcsY7Pd2B9SPqeenwgG6R6IPpaueEny5A");'></div>
+                </div>
+            </div>
+        </header>
+        <main class="container mx-auto px-6 py-8">
+            <section class="mb-12">
+                <div class="relative">
+                    <div class="overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide flex -mx-2 py-4">
+                        <div class="snap-center shrink-0 w-[calc(100%-1rem)] sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1rem)] mx-2">
+                            <div class="flex h-full flex-col gap-4 rounded-xl shadow-lg overflow-hidden bg-white hover:shadow-xl transition-shadow duration-300">
+                                <div class="w-full h-64 sm:h-80 bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAxjD6TfzaL8cim9ZIFm4c4MGkpxzNLkN1kUjGAmDYQLSrJWS8CjVE9WQcemSLBAIMQS0SlBupv-x9gXWAN_SHBs2th0YyHKOTjRaV17WxgFnvwBQ2aYUyZSnbhFp7sXwWBKiplG5Nd1ZrHgz9KP6V6nuxYXSS-2Mlf-1PTFaAVtLWfvKtUrn4QGoNBKnsAiP0ataXtusZSkBVXOmY9ylqT3bLYg5a7hGjMG8zrn0A5Ud9J-f7HeKA716HcRf6phc0iR0ocajaqtq4R");'></div>
+                                <div class="p-5">
+                                    <h3 class="text-gray-900 text-xl font-bold leading-tight mb-2">Global Protests Erupt Over New Policies</h3>
+                                    <p class="text-gray-600 text-base font-normal leading-relaxed line-clamp-3">Citizens worldwide express dissent against recent government decisions. This is a developing story with implications across various sectors and international relations.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="snap-center shrink-0 w-[calc(100%-1rem)] sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1rem)] mx-2">
+                            <div class="flex h-full flex-col gap-4 rounded-xl shadow-lg overflow-hidden bg-white hover:shadow-xl transition-shadow duration-300">
+                                <div class="w-full h-64 sm:h-80 bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCRuQIUiLq0v5hhN5SGxHdVdU_0GA4hqstWAN2YK9RVY1IQX9z78oxL9im8k6qFDgd5QHhMqZOfS_A0zUCyCJkJP-CYeOq8Rcmf-wnMFzmwXDaXf9Ye-UGcg3HwVa-V9HTTIH0IyZrkV2zIcEFcr_kQX6BVq0t0bD-zbI4mRbaM-aj_g3RXjAu1aWuVkYo5AknLaTaUukWUbpcsZdTlR7B3rEhOD2TBMZrSOeKtO-3Ovmi3puxf4qnAft4c3SImRVHM_tFHH16m_ZUL");'></div>
+                                <div class="p-5">
+                                    <h3 class="text-gray-900 text-xl font-bold leading-tight mb-2">Election Results Spark Debate</h3>
+                                    <p class="text-gray-600 text-base font-normal leading-relaxed line-clamp-3">The outcome of the national election has ignited discussions and controversies, prompting analysis from political experts and citizens alike.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="snap-center shrink-0 w-[calc(100%-1rem)] sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1rem)] mx-2">
+                            <div class="flex h-full flex-col gap-4 rounded-xl shadow-lg overflow-hidden bg-white hover:shadow-xl transition-shadow duration-300">
+                                <div class="w-full h-64 sm:h-80 bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDefSWf7TGYOf4VszU0a95EG8llRnxGd0YLeJMkpBuILcNidKsML6Edt4WCc9WYkNJL13e-uUNZ67L63qHFRomc29ADuU6FPWGaYWcVrd4yOlheaSDxHa6CoAFTISFIpPtx6dh1NLaqIgldKm8KHjtNQgppDofD4QEzqEcMo7XCF67zjz1vOp01sE0V0Aj0Prufsw8VCGcZx-l-8-gPeBCia3ebbDjrAgqTPWtildimEcXyGsuHECY68GtymjfNYC_8qeT6_yIZdlrE");'></div>
+                                <div class="p-5">
+                                    <h3 class="text-gray-900 text-xl font-bold leading-tight mb-2">Tech Industry Faces New Challenges</h3>
+                                    <p class="text-gray-600 text-base font-normal leading-relaxed line-clamp-3">The technology sector is navigating through a period of significant change and uncertainty, with supply chain issues and regulatory scrutiny.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="snap-center shrink-0 w-[calc(100%-1rem)] sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1rem)] mx-2">
+                            <div class="flex h-full flex-col gap-4 rounded-xl shadow-lg overflow-hidden bg-white hover:shadow-xl transition-shadow duration-300">
+                                <div class="w-full h-64 sm:h-80 bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB1_GVt5ipzQdsQKGkAzNrF58_FAhIto1-8--2ifZ50oSReN0tMR8dWR-OYjvIMpSey8ZmNcQs3hlLLNgh18D9rGwRqGcdYnMn7wpE-jX2AYzDKnBp5WD_UX111jjMI87zhiiohrxAOmKnZ91HBlq7E086OagADuWyMhrtD0L5bgP5bYFQW2oP1HKnklue9JNqEHoIqwY8zyk0LN7lNm_oS1v-Mjl-ObeDjba2n-tDXkaUJyUqEdg_nQEIx9-sKXMMds1fanMqyzVmj")'></div>
+                                <div class="p-5">
+                                    <h3 class="text-gray-900 text-xl font-bold leading-tight mb-2">Economic Outlook: Experts Weigh In</h3>
+                                    <p class="text-gray-600 text-base font-normal leading-relaxed line-clamp-3">Financial analysts discuss the current economic climate and potential future trends, offering insights for businesses and individuals.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="snap-center shrink-0 w-[calc(100%-1rem)] sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1rem)] mx-2">
+                            <div class="flex h-full flex-col gap-4 rounded-xl shadow-lg overflow-hidden bg-white hover:shadow-xl transition-shadow duration-300">
+                                <div class="w-full h-64 sm:h-80 bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB1_GVt5ipzQdsQKGkAzNrF58_FAhIto1-8--2ifZ50oSReN0tMR8dWR-OYjvIMpSey8ZmNcQs3hlLLNgh18D9rGwRqGcdYnMn7wpE-jX2AYzDKnBp5WD_UX111jjMI87zhiiohrxAOmKnZ91HBlq7E086OagADuWyMhrtD0L5bgP5bYFQW2oP1HKnklue9JNqEHoIqwY8zyk0LN7lNm_oS1v-Mjl-ObeDjba2n-tDXkaUJyUqEdg_nQEIx9-sKXMMds1fanMqyzVmj")'></div>
+                                <div class="p-5">
+                                    <h3 class="text-gray-900 text-xl font-bold leading-tight mb-2">Climate Change Summit Concludes</h3>
+                                    <p class="text-gray-600 text-base font-normal leading-relaxed line-clamp-3">World leaders gather to discuss urgent actions needed to combat climate change, with mixed outcomes and commitments.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-[-2rem] left-1/2 -translate-x-1/2 flex space-x-2">
+                        <button class="w-2.5 h-2.5 rounded-full bg-primary-500 ring-2 ring-primary-500/50"></button>
+                        <button class="w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gray-400"></button>
+                        <button class="w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gray-400"></button>
+                        <button class="w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gray-400"></button>
+                        <button class="w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gray-400"></button>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="text-gray-900 text-3xl font-bold leading-tight tracking-tight mb-8 pt-8 border-t border-gray-200">Latest News</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-full h-48 bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuARamNKHSysY5QRheBFLIC6OHFgXNZRmOXygx6TBvA1I3tAGfkc8xMitTSEo3yplvYoBX5tITOYknxezq6LkpLV-c6SnN6mxDVOYU7MobA57Cdvlr-hyBAJlr4Vj5IYVMFecr9zF4dCAGtqfg-jFq_MD2Ycmxp7XAQmJr8JF_3SMio0G86vOowcYnvCqB0MDgPikIxbHmvd7AZ1zvdH2UJthZLpDUjhOSgJyqaI2On8lEsn4W3_gHHhqPhbsH016RVZOl5DbsLZdYnl");'></div>
+                        <div class="p-6">
+                            <p class="text-primary-600 text-sm font-semibold leading-normal mb-1">Politics</p>
+                            <h3 class="text-gray-900 text-lg font-bold leading-tight mb-2">Government Announces New Economic Plan</h3>
+                            <p class="text-gray-600 text-sm font-normal leading-relaxed line-clamp-3">
+                                The administration unveiled a comprehensive strategy aimed at boosting economic growth and creating jobs.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-full h-48 bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAMg7iyA6q18wyT3WwqKUY4A9WSmG3-mGH5zmGaLkbFd5bg--1i0X3UrtV-rSMl62rsbyWjLTce8SjuDBO_fik4g4sLSTnQ7RmHsRklt4W-T6rXVsCfVqEJ421SjhsYXjzBQ_jA_Eher56VG5IJPZ2q5lesOjjhJgoLWHvk7Qu3od3Gm8vksyTodPoh0EhMviaa5enbZCX8_hNHTU-iWBkdfLusyxRfcXRi19S_dcQwiRThscL3TYkE1cF1idbTu1qUsNAJdnEBJLcV");'></div>
+                        <div class="p-6">
+                            <p class="text-primary-600 text-sm font-semibold leading-normal mb-1">Technology</p>
+                            <h3 class="text-gray-900 text-lg font-bold leading-tight mb-2">Tech Giant Unveils Latest Innovation</h3>
+                            <p class="text-gray-600 text-sm font-normal leading-relaxed line-clamp-3">
+                                A leading technology company introduced its newest product, promising to revolutionize the industry.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-full h-48 bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDusqN5DgvHItnGkRXExX7M5NbtPTWgdw9DpDCuzGF9INngMOBstI3LHGVtDfJgfw7VO_SsUDemfIQRwjQDipNDx19bbtHlosfKwfpJ20To784_17fQNcNkmR02N4BQdiUDGRIh2X5hs6Kj09Ysdvwfqsz2Y2mPAinp_NVtQNegxiuEbKnVzPGzR_Ey9OUZhTQuIS8ApkKF2rahD-b_ML4fK-jtEqrBVF3Vt18KF1b1flC8fA9QJI5zXq4Bdu0xnhNxXtAb7f9CKdOb");'></div>
+                        <div class="p-6">
+                            <p class="text-primary-600 text-sm font-semibold leading-normal mb-1">World News</p>
+                            <h3 class="text-gray-900 text-lg font-bold leading-tight mb-2">International Leaders Meet</h3>
+                            <p class="text-gray-600 text-sm font-normal leading-relaxed line-clamp-3">
+                                Key figures from around the world convened to address pressing international concerns and foster cooperation.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-full h-48 bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3ewOD_w3cw3q8sxlvEdmTsaruZFOkFKGJ8Pl7MSXL6df3e3heVnTdPw1QTutBMTamVxWZcDQoHP7P6Agu1bxeJ3C6AAiUgE3iwtA3i-bkQTesp007JnJ0Q_Uj32t1kQ27hCD2tMUONCqeDXKgdwIV3lj_Hot-Or6az7AsOl85m5nl1DChiMQJ2C-nwQmxUJymZYjNFH-eTANoUv9UjC5FniEP5ifsMkLcV4F9k3dqGMEJA1pli5Lsm1MBuwIfj3n1effeg5XGjHAr");'></div>
+                        <div class="p-6">
+                            <p class="text-primary-600 text-sm font-semibold leading-normal mb-1">Business</p>
+                            <h3 class="text-gray-900 text-lg font-bold leading-tight mb-2">Market Trends Shift Consumer Behavior</h3>
+                            <p class="text-gray-600 text-sm font-normal leading-relaxed line-clamp-3">Recent data suggests a notable change in how consumers are spending and what they prioritize.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-full h-48 bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDTLDvC8vbyk2VnXy1YeFmlTFbGsdK7OOGhkkRBtVCdwsZZ44wt9sjWI5Net5JATXuAX6Bm3Eznl0GdQiPKLsA9Ies-7SxnYZz0u8BrrpJExhb-RTyYmMP_GU9z8dXf96j2YuEJHffKg3FNkYjiQr_GdJ6Hr9628zEofpFVf4mhJOnFuxtE4yRJd-Z3a3PlWTfl3LBHRDunPHI-s3Cvo4O_G4fA_id1Ai5pq5kPk2FpC2tNqoZAuxOrBFmt_uoq9-6O4-mW2-Vh7vfS");'></div>
+                        <div class="p-6">
+                            <p class="text-primary-600 text-sm font-semibold leading-normal mb-1">Sports</p>
+                            <h3 class="text-gray-900 text-lg font-bold leading-tight mb-2">Local Team Wins Championship</h3>
+                            <p class="text-gray-600 text-sm font-normal leading-relaxed line-clamp-3">
+                                The city's sports team celebrated a major victory, securing the championship title in an exciting game.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-full h-48 bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBc7sjngikjvPzKWrN3ENNEJ0ujBXOFLVRZ2fq8J3gVk1OuDzmbONQhw9xV2lpbROe7dUUMcc-WePct_k3_gEbOQ_F2SyVWhfSinyH2tcJEMmJZprRv4QnGINZwvzQm_-HHMhxCtjedwZveaauX6UBAw7raaEPKKiKTZTFPlwcwjiv-D9zcpUBuq_mUHOa3ZDEJ__Mz42CyOfOj-4B9zr1xzA76RdP6EyuAhwCHZROpdMHW15TR9lI_U1rw6eZQ7FHNBCVekPFdEnzX");'></div>
+                        <div class="p-6">
+                            <p class="text-primary-600 text-sm font-semibold leading-normal mb-1">Arts &amp; Culture</p>
+                            <h3 class="text-gray-900 text-lg font-bold leading-tight mb-2">New Exhibition Showcases Emerging Artists</h3>
+                            <p class="text-gray-600 text-sm font-normal leading-relaxed line-clamp-3">
+                                A gallery opened its doors to display the works of up-and-coming artists, highlighting diverse perspectives.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="bg-gray-800 text-gray-300 py-12 mt-16">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-4">NewsToday</h3>
+                        <p class="text-sm">Providing you with the latest and most accurate news from around the globe. Stay informed with us.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a class="hover:text-primary-400 transition-colors" href="#">About Us</a></li>
+                            <li><a class="hover:text-primary-400 transition-colors" href="#">Contact</a></li>
+                            <li><a class="hover:text-primary-400 transition-colors" href="#">Privacy Policy</a></li>
+                            <li><a class="hover:text-primary-400 transition-colors" href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a class="text-gray-400 hover:text-primary-400 transition-colors" href="#"><i class="material-icons">facebook</i></a>
+                            <a class="text-gray-400 hover:text-primary-400 transition-colors" href="#">  <svg fill="currentColor" height="24" viewBox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.602.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"></path></svg> </a>
+                            <a class="text-gray-400 hover:text-primary-400 transition-colors" href="#"><i class="material-icons">camera_alt</i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 border-t border-gray-700 pt-8 text-center text-sm">
+                    <p>© 2024 NewsToday. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<script>
+    // Simple polyfill for scrollbar-hide
+    const scrollbarHide = () => {
+        const style = document.createElement('style');
+        style.innerHTML = `
+          .scrollbar-hide::-webkit-scrollbar { display: none; }
+          .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        `;
+        document.head.appendChild(style);
+    };
+    scrollbarHide();
+    // Tailwind primary color definition
+    const tailwindConfig = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: {
+                        50: '#eff8ff',
+                        100: '#dff0ff',
+                        200: '#bce3ff',
+                        300: '#8ed4ff',
+                        400: '#5abfff',
+                        500: '#3d98f4', // primary color
+                        600: '#2388f0',
+                        700: '#1c70d0',
+                        800: '#1a5aa7',
+                        900: '#1c4d85',
+                        950: '#143054'
+                    }
+                }
+            }
+        }
+    }
+    // Apply the Tailwind config (Requires Tailwind JIT or processing)
+    // For CDN, this is illustrative. Actual application might need custom JS or be pre-compiled.
+    // For this example, we'll assume the primary classes like `text-primary-600` are defined.
+</script>
+
+</body></html>
