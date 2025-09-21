@@ -4,9 +4,8 @@
  * [561] Array Partition
  */
 
-// @lc code=start
 // O(n log n)
-function arrayPairSum(nums: number[]): number {
+function arrayPairSum1(nums: number[]): number {
     const sorted = nums.sort((a, b) => a-b);
 
     let result = 0;
@@ -16,11 +15,10 @@ function arrayPairSum(nums: number[]): number {
 
     return result
 };
-// @lc code=end
 
 
 // @lc code=start
-function arrayPairSum2(nums: number[]): number {
+function arrayPairSum(nums: number[]): number {
     const sorted = nums.sort((a, b) => a-b);
 
     let result = 0;
