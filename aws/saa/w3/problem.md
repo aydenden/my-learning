@@ -3,18 +3,18 @@
 
 이 요구 사항을 충족하기 위해 솔루션 아키텍트는 무엇을 해야 합니까?
 
-A. 읽기 복제본 (read replica)
-B. 수동 스냅샷
-C. 자동 백업
+A. 읽기 복제본 (read replica)  
+B. 수동 스냅샷  
+C. 자동 백업  
 D. 다중 AZ 배포 (multi-az)
 
 2. 한 회사가 단일 VPC의 Amazon EC2 인스턴스에서 고가용성 이미지 처리 애플리케이션을 실행합니다. EC2 인스턴스는 여러 가용성 영역에 걸쳐 여러 서브넷 내에서 실행됩니다. EC2 인스턴스는 서로 통신하지 않습니다. 그러나 EC2 인스턴스는 Amazon S3에서 이미지를 다운로드하고 단일 NAT 게이트웨이를 통해 Amazon S3에 이미지를 업로드합니다. 이 회사는 데이터 전송 요금에 대해 우려하고 있습니다.
 
 이 회사가 지역 데이터 전송 요금을 피하는 가장 비용 효율적인 방법은 무엇입니까?
 
-A. 각 가용성 영역에서 NAT 게이트웨이를 시작합니다.
-B. NAT 게이트웨이를 NAT 인스턴스로 교체합니다.
-C. Amazon S3에 대한 게이트웨이 VPC 엔드포인트를 배포합니다.
+A. 각 가용성 영역에서 NAT 게이트웨이를 시작합니다.   
+B. NAT 게이트웨이를 NAT 인스턴스로 교체합니다.  
+C. Amazon S3에 대한 게이트웨이 VPC 엔드포인트를 배포합니다.  
 D. EC2 인스턴스를 실행하기 위해 EC2 전용 호스트를 프로비저닝합니다.
 
 3. 한 회사에는 모니터링 장치로부터 실시간 데이터를 수신하는 API가 있습니다. API는 이 데이터를 Amazon RDS DB 인스턴스에 저장하여 나중에 분석할 수 있도록 합니다. 모니터링 장치가 API로 보내는 데이터 양은 변동합니다. 트래픽이 많은 기간에는 API가 종종 시간 초과 오류를 반환합니다.
@@ -23,17 +23,17 @@ D. EC2 인스턴스를 실행하기 위해 EC2 전용 호스트를 프로비저�
 
 어떤 솔루션이 이러한 요구 사항을 충족할까요?
 
-A. 사용 가능한 메모리가 더 많은 인스턴스 유형으로 DB 인스턴스의 크기를 늘립니다.
-B. DB 인스턴스를 Multi-AZ DB 인스턴스로 수정합니다. 모든 활성 RDS DB 인스턴스에 쓰도록 애플리케이션을 구성합니다.
-C. API를 수정하여 Amazon Simple Queue Service(Amazon SQS) 대기열에 들어오는 데이터를 씁니다. Amazon SQS가 대기열에서 데이터베이스에 데이터를 쓰기 위해 호출하는 AWS Lambda 함수를 사용합니다.
+A. 사용 가능한 메모리가 더 많은 인스턴스 유형으로 DB 인스턴스의 크기를 늘립니다.  
+B. DB 인스턴스를 Multi-AZ DB 인스턴스로 수정합니다. 모든 활성 RDS DB 인스턴스에 쓰도록 애플리케이션을 구성합니다.  
+C. API를 수정하여 Amazon Simple Queue Service(Amazon SQS) 대기열에 들어오는 데이터를 씁니다. Amazon SQS가 대기열에서 데이터베이스에 데이터를 쓰기 위해 호출하는 AWS Lambda 함수를 사용합니다.  
 D. API를 수정하여 Amazon Simple Notibcation Service(Amazon SNS) 토픽에 들어오는 데이터를 씁니다. Amazon SNS가 토픽의 데이터를 데이터베이스에 쓰기 위해 호출하는 AWS Lambda 함수를 사용합니다
 
 4. 한 회사가 Amazon Linux EC2 인스턴스 그룹에서 애플리케이션을 실행합니다. 규정 준수를 위해 회사는 모든 애플리케이션 로그 파일을 7년 동안 보관 해야 합니다. 로그 파일은 모든 파일에 동시에 액세스할 수 있어야 하는 보고 도구에 의해 분석됩니다.
 어떤 스토리지 솔루션이 이러한 요구 사항을 가장 비용 효율적으로 충족합니까?
 
-A. Amazon Elastic Block Store(Amazon EBS)
-B. Amazon Elastic File System(Amazon EFS)
-C. Amazon EC2 인스턴스 스토어
+A. Amazon Elastic Block Store(Amazon EBS)  
+B. Amazon Elastic File System(Amazon EFS)  
+C. Amazon EC2 인스턴스 스토어  
 D. 아마존 S3
 
 5. 한 회사가 VPC의 컨테이너에서 실행되는 애플리케이션을 만들고 있습니다. 이 애플리케이션은 Amazon S3 버킷에 데이터를 저장하고 액세스합니다.
@@ -41,7 +41,7 @@ D. 아마존 S3
 
 어떤 솔루션이 이러한 요구 사항을 충족할까요?
 
-A. S3 버킷에 대해 S3 Intelligent-Tiering 활성화
-B. S3 버킷에 대한 S3 전송 가속 활성화
-C. Amazon S3에 대한 게이트웨이 VPC 엔드포인트를 만듭니다. 이 엔드포인트를 VPC의 모든 경로 테이블과 연결합니다.
+A. S3 버킷에 대해 S3 Intelligent-Tiering 활성화  
+B. S3 버킷에 대한 S3 전송 가속 활성화  
+C. Amazon S3에 대한 게이트웨이 VPC 엔드포인트를 만듭니다. 이 엔드포인트를 VPC의 모든 경로 테이블과 연결합니다.  
 D. VPC에서 Amazon S3에 대한 인터페이스 엔드포인트를 만듭니다. 이 엔드포인트를 VPC의 모든 경로 테이블과 연결합니다.
